@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #FAF8F4;
+    color: #1A1A1A;
+    font-family: 'DM Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: #E8400C;
+    color: white;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  .section-label {
+    @apply font-mono text-xs tracking-[0.2em] uppercase text-accent;
+  }
+
+  .pill-btn {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-full font-body font-medium text-sm transition-all duration-300;
+  }
+
+  .pill-btn-primary {
+    @apply pill-btn bg-ink text-white hover:bg-accent hover:scale-[1.03] active:scale-[0.98];
+  }
+
+  .pill-btn-outline {
+    @apply pill-btn border border-ink text-ink hover:bg-ink hover:text-white hover:scale-[1.03] active:scale-[0.98];
+  }
+
+  .card-base {
+    @apply bg-white rounded-2xl border border-border transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF8F4;
+}
+::-webkit-scrollbar-thumb {
+  background: #D1C9BE;
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E8400C;
+}
+
+/* Noise texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+}
