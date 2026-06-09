@@ -71,7 +71,7 @@ export const siteData = {
     { name: 'Grow.2.viral', location: 'Mumbai', duration: '2 Years' },
     { name: 'FilmyExplore Media', location: 'Delhi', duration: '3 Years' },
     { name: 'SeedMedia.in', location: 'Noida', duration: '2 Years' },
-    { name: 'Hearfulness Institute', location: 'Hyderabad', duration: '3 Years' },
+    { name: 'Heartfulness Institute', location: 'Hyderabad', duration: '3 Years' },
   ],
 
   platforms: [
