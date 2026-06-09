@@ -14,8 +14,8 @@ export const siteData = {
       { value: '10M+', label: 'Owner Base' },
       { value: '5+', label: 'Years of Experience' },
     ],
-    email: 'contact@trendingmarketing.in',
-    phone: '+91 98765 43210',
+    email: 'trendingmarketing2755@gmail.com',
+    phone: '+91 9664816180',
     whatsapp: 'https://wa.me/+919664816180',
   },
 
@@ -28,17 +28,27 @@ export const siteData = {
 
   services: [
     { icon: '🎬', title: 'Movie Promotion', desc: 'Full-funnel campaigns for theatrical & OTT releases that build hype before day one.', image: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&q=80' },
-    { icon: '🎵', title: 'Music & Song Promotion', desc: 'Cross-platform music rollouts across 50+ DSPs and social media platforms.', image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&q=80' },
+    { icon: '📺', title: 'Web Series & OTT', desc: 'Audience building strategies for OTT originals and digital web series.', image: 'https://deadline.com/wp-content/uploads/2024/10/Amazon-MX-Player.jpeg?w=681&h=383&crop=1' },
+    { icon: '🎵', title: 'Music & Song Promotion', desc: 'Cross-platform music rollouts across 50+ DSPs and social media platforms.', image: 'https://drone-mods.com/wp-content/uploads/2025/04/image_M92750UYBL.png' },
     { icon: '🌟', title: 'Influencer Marketing', desc: 'Curated influencer matchmaking that drives authentic reach and conversions.', image: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&q=80' },
     { icon: '📱', title: 'App Promotion', desc: 'Install-driven campaigns that put your app in front of the right audience.', image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&q=80' },
     { icon: '🎯', title: 'Brand Promotion', desc: 'End-to-end brand building — from identity to performance campaigns.', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80' },
-    { icon: '📺', title: 'Web Series & OTT', desc: 'Audience building strategies for OTT originals and digital web series.', image: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=600&q=80' },
+    
     { icon: '👤', title: 'Personal Branding', desc: 'Positioning creators and executives as thought leaders in their space.', image: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=80' },
     { icon: '🏢', title: 'Business Promotion', desc: 'Performance-focused growth marketing for startups and enterprises alike.', image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80' },
+    { icon: '🎵', title: 'Music & Song Promotion', desc: 'Cross-platform music rollouts across 50+ DSPs and social media platforms.', image: 'https://nykdaily.com/wp-content/uploads/2020/03/ByteDances-social-music-streaming-app-Resso-Debuts-in-India-NYK-Daily.png' },
     { icon: '🎪', title: 'Event Promotion', desc: 'Driving footfall and buzz for live events, festivals, and concerts.', image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80' },
-    { icon: '🚀', title: 'Startup Promotion', desc: 'Rapid growth hacking strategies tailored for early-stage ventures.', image: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=600&q=80' },
     { icon: '🎤', title: 'Celebrity Promotion', desc: 'Managing public personas and fan engagement for celebrities.', image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600&q=80' },
-    { icon: '📚', title: 'Book & Course Promotion', desc: 'Launch strategies that get authors and educators in front of their ideal readers.', image: 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=600&q=80' },
+
+    { icon: '📈', title: 'Growth Marketing', desc: 'Data-driven strategies that fuel sustainable growth and ROI.', image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&q=80' },
+
+    { icon: '🧠', title: 'Creative Strategy', desc: 'Concept-to-execution creative development that resonates and converts.', image: 'https://images.unsplash.com/photo-1492724441997-5dc865305da7?w=600&q=80' },
+
+    { icon: '🔍', title: 'SEO & Content Marketing', desc: 'Optimized content strategies that boost organic visibility and engagement.', image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&q=80' },
+
+    { icon: '📊', title: 'Analytics & Reporting', desc: 'In-depth performance analysis and insights to inform strategy and demonstrate impact.', image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80' },
+
+
   ],
 
   socialAccounts: [
@@ -60,6 +70,7 @@ export const siteData = {
     { name: 'Grow.2.viral', location: 'Mumbai', duration: '2 Years' },
     { name: 'FilmyExplore Media', location: 'Delhi', duration: '3 Years' },
     { name: 'SeedMedia.in', location: 'Noida', duration: '2 Years' },
+    { name: 'Hearfulness Institute', location: 'Hyderabad', duration: '3 Years' },
   ],
 
   platforms: [

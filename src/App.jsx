@@ -6,7 +6,6 @@ import About from './components/About'
 import ClientIndustries from './components/ClientIndustries'
 import Services from './components/Services'
 import Work from './components/Work'
-import Pricing from './components/Pricing'
 import Reach from './components/Reach'
 import Testimonials from './components/Testimonials'
 import Blog from './components/Blog'
@@ -24,11 +23,13 @@ export default function App() {
         <Hero />
         <Marquee />
         <About />
-        <ClientIndustries />
         <Services />
+        <ClientIndustries />
+        
+        <Reach />
         <Work />
         {/* <Pricing /> */}
-        <Reach />
+        
         <Testimonials />
        {/*  <Blog /> */}
         <Contact />

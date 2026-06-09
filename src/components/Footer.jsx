@@ -8,12 +8,6 @@ const navLinks = [
   { label: 'Reach', href: '#reach' },
 ]
 
-const socials = [
-  { Icon: Instagram, href: '#', label: 'Instagram' },
-  { Icon: Twitter, href: '#', label: 'Twitter' },
-  { Icon: Facebook, href: '#', label: 'Facebook' },
-]
-
 export default function Footer() {
   const [email, setEmail] = useState('')
   const [subbed, setSubbed] = useState(false)
@@ -44,19 +38,6 @@ export default function Footer() {
               Helping brands, films, and artists go viral through data-driven campaigns and a 300M+ follower network.
             </p>
 
-            {/* Social icons */}
-            <div className="flex items-center justify-center sm:justify-start gap-2">
-              {socials.map(({ Icon, href, label }) => (
-                <a
-                  key={label}
-                  href={href}
-                  aria-label={label}
-                  className="w-8 h-8 rounded-full border border-black/15 hover:border-accent hover:text-accent text-[#1A1A1A]/50 flex items-center justify-center transition-all duration-200"
-                >
-                  <Icon size={14} />
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Nav links */}
@@ -95,9 +76,6 @@ export default function Footer() {
         <div className="pt-6 border-t border-black/10 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="font-body text-xs text-[#1A1A1A]/30">
             © {new Date().getFullYear()} Jogal Govind Ahir. All rights reserved.
-          </p>
-          <p className="font-body text-xs text-[#1A1A1A]/30">
-            Trending Marketing · <span className="text-[#1A1A1A]/40">@trendingmarketing1</span>
           </p>
         </div>
       </div>

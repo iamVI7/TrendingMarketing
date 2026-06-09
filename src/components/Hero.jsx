@@ -1,4 +1,4 @@
-import { ArrowRight, Play, Zap, MapPin } from 'lucide-react'
+import { ArrowRight, Play, MapPin } from 'lucide-react'
 import { siteData } from '../data/siteData'
 
 export default function Hero() {
@@ -23,7 +23,7 @@ export default function Hero() {
       </svg>
 
       {/* ── Main layout ── */}
-      <div className="relative z-10 max-w-[1280px] mx-auto px-6 sm:px-10 w-full py-10 lg:py-0 min-h-screen flex items-center">
+      <div className="relative z-10 max-w-[1280px] mx-auto px-6 sm:px-10 w-full py-6 lg:py-0 min-h-screen flex items-center">
         <div className="grid lg:grid-cols-[1fr_360px] xl:grid-cols-[1fr_420px] gap-10 lg:gap-14 items-center w-full">
 
           {/* ════════ LEFT COLUMN ════════ */}
@@ -53,7 +53,7 @@ export default function Hero() {
                   fontWeight: 700,
                 }}
               >
-               We Make <em className="not-italic text-[#E8470A]">Brands</em>
+                We Make <em className="not-italic text-[#E8470A]">Brands</em>
                 <br />
                 Go Viral<span className="text-[#E8470A]">.</span>
               </h1>
@@ -95,7 +95,7 @@ export default function Hero() {
             className="relative flex justify-center lg:justify-end order-1 lg:order-2 animate-fade-in"
             style={{ animationDelay: '0.2s' }}
           >
-            <div className="relative w-full max-w-[290px] sm:max-w-[330px] xl:max-w-[420px]">
+            <div className="relative w-full max-w-[320px] sm:max-w-[370px] xl:max-w-[460px]">
 
               {/* Photo */}
               <div
@@ -111,7 +111,7 @@ export default function Hero() {
                 {/* Dark gradient at bottom for text legibility */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
 
-                {/* ── Name & Location overlay — bottom RIGHT, clear of the 800+ chip ── */}
+                {/* ── Name & Location overlay ── */}
                 <div className="absolute bottom-5 right-5 z-10 text-right">
                   <p
                     className="text-white font-bold text-base leading-tight drop-shadow-md"
@@ -127,56 +127,6 @@ export default function Hero() {
                     >
                       Jamnagar, Gujarat
                     </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* ── 5+ Yrs Experience chip — top LEFT edge ── */}
-              <div className="absolute -top-3 -left-3 z-20 bg-[#E8470A] text-white rounded-2xl px-3.5 py-2 shadow-[0_8px_24px_rgba(232,71,10,0.3)]">
-                <div className="flex items-center gap-1.5">
-                  <Zap size={12} fill="white" />
-                  <div style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                    <div className="font-bold text-[14px] leading-tight">5+</div>
-                    <div className="text-[10px] font-medium uppercase tracking-wide leading-tight opacity-90">Yrs Exp.</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* ── 300M+ Reach badge — bottom LEFT ── */}
-              <div className="absolute -bottom-3 -left-3 z-20 bg-white border border-black/8 rounded-2xl px-3.5 py-2 shadow-[0_8px_24px_rgba(0,0,0,0.08)]">
-                <div className="flex items-center gap-1.5">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#E8470A" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
-                    <polyline points="16 7 22 7 22 13" />
-                  </svg>
-                  <span
-                    className="font-semibold text-[13px] whitespace-nowrap text-[#1A1A1A]"
-                    style={{ fontFamily: "'DM Sans', sans-serif" }}
-                  >
-                    300M+ Reach
-                  </span>
-                </div>
-              </div>
-
-             {/* ── Campaigns live badge — top RIGHT ── */}
-              <div className="absolute -top-3 -right-3 z-20 bg-white border border-black/8 rounded-xl px-3 py-2 shadow-[0_8px_32px_rgba(0,0,0,0.08)]">
-                <div className="flex items-center gap-2">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E8470A" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                  </svg>
-                  <div>
-                    <div
-                      className="text-[#1A1A1A]/40 text-[8px] tracking-[0.12em] uppercase"
-                      style={{ fontFamily: "'DM Mono', monospace" }}
-                    >
-                      Campaigns Live
-                    </div>
-                    <div
-                      className="text-[#E8470A] font-bold text-base leading-tight"
-                      style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
-                    >
-                      800+
-                    </div>
                   </div>
                 </div>
               </div>
