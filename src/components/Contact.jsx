@@ -16,28 +16,52 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Replace with actual submission logic
     setSubmitted(true)
   }
 
   return (
     <section id="contact" className="py-24 sm:py-32 bg-ink text-white relative overflow-hidden"
-style={{ margin: '0 12px', borderRadius: 28 }}>
-      {/* Decoration */}
+      style={{ margin: '0 12px', borderRadius: 28 }}>
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-accent/5 blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-5 sm:px-8 relative">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
+
           {/* Left */}
           <div className="space-y-8">
-            <div className="animate-on-scroll">
-              <span className="font-mono text-xs tracking-[0.2em] uppercase text-accent">Get in Touch</span>
-              <h2 className="font-display text-4xl sm:text-5xl font-bold text-white mt-3 leading-tight">
+            <div className="animate-on-scroll flex flex-col items-center text-center sm:items-start sm:text-left">
+
+              {/* Pill label */}
+              <span style={{
+                display: 'inline-flex', alignItems: 'center', gap: 8,
+                fontFamily: "'DM Mono', monospace",
+                fontSize: 10, letterSpacing: '0.2em',
+                color: '#ff5a3c', textTransform: 'uppercase',
+                border: '1px solid rgba(255,90,60,0.25)',
+                background: 'rgba(255,90,60,0.06)',
+                borderRadius: 100, padding: '6px 14px',
+                marginBottom: 20,
+              }}>
+                <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#ff5a3c', display: 'block' }} />
+                Get in Touch
+              </span>
+
+              {/* Headline */}
+              <h2 style={{
+                fontFamily: "'Playfair Display', Georgia, serif",
+                fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+                fontWeight: 700,
+                lineHeight: 1.05,
+                letterSpacing: '-0.03em',
+                color: '#ffffff',
+                margin: 0,
+              }}>
                 Ready to make<br />
-                <span className="italic text-accent">something viral?</span>
+                <em className="not-italic" style={{ color: '#ff5a3c' }}>something viral?</em>
               </h2>
             </div>
-            <p className="animate-on-scroll font-body text-white/50 leading-relaxed max-w-md">
+
+            <p className="animate-on-scroll font-body text-white/50 leading-relaxed max-w-md text-center sm:text-left">
               Tell us about your project and we'll craft a custom strategy that puts your brand in front of the right audience, at the right time.
             </p>
 
@@ -60,7 +84,7 @@ style={{ margin: '0 12px', borderRadius: 28 }}>
             </div>
           </div>
 
-          {/* Right: Form */}
+          {/* Right: Form — untouched */}
           <div className="animate-on-scroll bg-white/5 border border-white/10 rounded-3xl p-7">
             {submitted ? (
               <div className="flex flex-col items-center justify-center h-72 gap-4 text-center">
@@ -152,6 +176,7 @@ style={{ margin: '0 12px', borderRadius: 28 }}>
               </form>
             )}
           </div>
+
         </div>
       </div>
     </section>

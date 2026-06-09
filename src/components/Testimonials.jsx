@@ -7,14 +7,41 @@ export default function Testimonials() {
   return (
     <section className="py-24 sm:py-32">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
-        <div className="text-center mb-14 animate-on-scroll">
-          <span className="section-label">Client Love</span>
-          <h2 className="font-display text-4xl sm:text-5xl font-bold text-ink mt-3 leading-tight">
+
+        {/* Header */}
+        <div className="flex flex-col items-center text-center mb-14 animate-on-scroll">
+
+          {/* Pill label */}
+          <span style={{
+            display: 'inline-flex', alignItems: 'center', gap: 8,
+            fontFamily: "'DM Mono', monospace",
+            fontSize: 10, letterSpacing: '0.2em',
+            color: '#ff5a3c', textTransform: 'uppercase',
+            border: '1px solid rgba(255,90,60,0.25)',
+            background: 'rgba(255,90,60,0.06)',
+            borderRadius: 100, padding: '6px 14px',
+            marginBottom: 24,
+          }}>
+            <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#ff5a3c', display: 'block' }} />
+            Client Love
+          </span>
+
+          {/* Headline */}
+          <h2 style={{
+            fontFamily: "'Playfair Display', Georgia, serif",
+            fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+            fontWeight: 700,
+            lineHeight: 1.05,
+            letterSpacing: '-0.03em',
+            color: '#1a1714',
+            margin: 0,
+          }}>
             Brands trust us with<br />
-            <span className="italic text-accent">their biggest moments.</span>
+            <em className="not-italic" style={{ color: '#ff5a3c' }}>their biggest moments.</em>
           </h2>
         </div>
 
+        {/* Grid — untouched */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {testimonials.map((testimonial, i) => (
             <div
@@ -46,6 +73,7 @@ export default function Testimonials() {
             </div>
           ))}
         </div>
+
       </div>
     </section>
   )

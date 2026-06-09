@@ -23,7 +23,7 @@ export default function ClientIndustries() {
   const { clientIndustries } = siteData
 
   return (
-    <section className="py-24 sm:py-32 bg-[#FAF9F6] overflow-hidden">
+    <section className="pt-10 pb-24 sm:pt-14 sm:pb-32 bg-[#FAF9F6] overflow-hidden">
       <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
 
         {/* Header */}

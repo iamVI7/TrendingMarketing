@@ -8,23 +8,39 @@ export default function About() {
     <section id="about" className="py-20 bg-[#FAF9F6]">
       <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
 
+        {/* ── Mobile-only: Logo + Pill — centered ── */}
+        <div className="flex items-center justify-center gap-3 mb-8 lg:hidden">
+          <div className="w-14 h-14 rounded-full border-2 border-[#E8470A]/25 bg-white shadow-[0_4px_16px_rgba(232,71,10,0.18)] overflow-hidden flex items-center justify-center flex-shrink-0">
+            <img
+              src="/TRENDINGMARKETING_LOGO.jpg"
+              alt="Logo"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <span
+            className="inline-flex items-center border border-[#E8470A]/25 bg-[#E8470A]/6 text-[#E8470A] text-[11px] tracking-[0.18em] uppercase px-5 py-2.5 rounded-full font-medium"
+            style={{ fontFamily: "'DM Mono', monospace" }}
+          >
+            Trending Marketing
+          </span>
+        </div>
+
         <div className="grid lg:grid-cols-[280px_1fr] gap-10 lg:gap-16 items-start">
 
           {/* ── LEFT: Photo + Stats ── */}
           <div className="flex flex-col gap-3">
 
             {/* Photo */}
-            <div className="relative">
+            <div className="relative mx-6 sm:mx-0">
               <div
                 className="relative rounded-3xl overflow-hidden border border-black/8 shadow-[0_16px_48px_rgba(0,0,0,0.12)]"
                 style={{ aspectRatio: '3/4' }}
               >
                 <img
-                  src="/IMAGE2.jpeg"
+                  src="/IMAGE.jpeg"
                   alt="Founder"
                   className="w-full h-full object-cover object-top"
                 />
-                {/* Strong bottom gradient so name is always legible */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
                 {/* Nameplate */}
@@ -47,16 +63,58 @@ export default function About() {
                 </div>
               </div>
 
-              {/* Years badge */}
-              <div className="absolute -top-3 -right-3 z-10 bg-[#E8470A] text-white rounded-2xl px-3 py-2.5 shadow-[0_6px_20px_rgba(232,71,10,0.35)] text-center">
+              {/* ── 300M+ chip — top-left ── */}
+              <div className="absolute -top-3 -left-3 z-10 bg-white rounded-2xl px-3 py-2 shadow-[0_6px_18px_rgba(0,0,0,0.13)] flex items-center gap-2 border border-black/6">
+                <div className="w-7 h-7 rounded-lg bg-[#E8470A]/10 flex items-center justify-center flex-shrink-0">
+                  <TrendingUp size={12} className="text-[#E8470A]" strokeWidth={2} />
+                </div>
+                <div>
+                  <div
+                    className="text-[#111110] font-bold text-[13px] leading-none"
+                    style={{ fontFamily: "'Playfair Display', serif" }}
+                  >
+                    300M+
+                  </div>
+                  <div
+                    className="text-[#1A1A1A]/45 text-[8px] tracking-widest uppercase mt-0.5"
+                    style={{ fontFamily: "'DM Mono', monospace" }}
+                  >
+                    Total Reach
+                  </div>
+                </div>
+              </div>
+
+              {/* ── 800+ chip — bottom-right ── */}
+              <div className="absolute -bottom-3 -right-3 z-10 bg-white rounded-2xl px-3 py-2 shadow-[0_6px_18px_rgba(0,0,0,0.13)] flex items-center gap-2 border border-black/6">
+                <div className="w-7 h-7 rounded-lg bg-[#22c55e]/10 flex items-center justify-center flex-shrink-0">
+                  <Star size={12} className="text-[#22c55e]" strokeWidth={2} />
+                </div>
+                <div>
+                  <div
+                    className="text-[#111110] font-bold text-[13px] leading-none"
+                    style={{ fontFamily: "'Playfair Display', serif" }}
+                  >
+                    800+
+                  </div>
+                  <div
+                    className="text-[#1A1A1A]/45 text-[8px] tracking-widest uppercase mt-0.5"
+                    style={{ fontFamily: "'DM Mono', monospace" }}
+                  >
+                    Campaigns
+                  </div>
+                </div>
+              </div>
+
+              {/* ── Years badge — top-right ── */}
+              <div className="absolute -top-3 -right-3 z-10 bg-[#E8470A] text-white rounded-2xl px-3.5 py-3 shadow-[0_6px_20px_rgba(232,71,10,0.38)] text-center">
                 <div
-                  className="font-bold text-base leading-none"
+                  className="font-bold text-[15px] leading-none"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
                   5+
                 </div>
                 <div
-                  className="text-white/75 text-[8px] tracking-widest uppercase mt-0.5"
+                  className="text-white/75 text-[8px] tracking-widest uppercase mt-1"
                   style={{ fontFamily: "'DM Mono', monospace" }}
                 >
                   Yrs Exp.
@@ -64,8 +122,8 @@ export default function About() {
               </div>
             </div>
 
-            {/* Stats — 2×2 modern cards */}
-            <div className="grid grid-cols-2 gap-2">
+            {/* Stats — 2×2 */}
+            <div className="grid grid-cols-2 gap-2 mt-4">
               {[
                 { icon: TrendingUp, value: agency.stats[0]?.value ?? '800+',  label: agency.stats[0]?.label ?? 'Campaigns Delivered' },
                 { icon: Users,      value: agency.stats[1]?.value ?? '300M+', label: agency.stats[1]?.label ?? 'Follower Reach' },
@@ -99,14 +157,22 @@ export default function About() {
           {/* ── RIGHT: Content ── */}
           <div className="flex flex-col gap-6 pt-2">
 
-            {/* Pill label */}
-            <span
-              className="inline-flex items-center gap-2 border border-[#E8470A]/25 bg-[#E8470A]/6 text-[#E8470A] text-[10px] tracking-[0.2em] uppercase px-4 py-2 rounded-full w-fit"
-              style={{ fontFamily: "'DM Mono', monospace" }}
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#E8470A]" />
-              About the Agency
-            </span>
+            {/* Logo + Pill — desktop only */}
+            <div className="hidden lg:flex items-center gap-3">
+              <div className="w-14 h-14 rounded-full border-2 border-[#E8470A]/25 bg-white shadow-[0_4px_16px_rgba(232,71,10,0.18)] overflow-hidden flex items-center justify-center flex-shrink-0">
+                <img
+                  src="/TRENDINGMARKETING_LOGO.jpg"
+                  alt="Logo"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <span
+                className="inline-flex items-center border border-[#E8470A]/25 bg-[#E8470A]/6 text-[#E8470A] text-[11px] tracking-[0.18em] uppercase px-5 py-2.5 rounded-full font-medium"
+                style={{ fontFamily: "'DM Mono', monospace" }}
+              >
+                Trending Marketing
+              </span>
+            </div>
 
             {/* Headline */}
             <h2
@@ -122,9 +188,9 @@ export default function About() {
               <em className="not-italic text-[#E8470A]">powered by culture.</em>
             </h2>
 
-            {/* Body */}
+            {/* Body — justified */}
             <p
-              className="text-[#1A1A1A]/52 leading-relaxed text-[0.95rem] max-w-xl"
+              className="text-[#1A1A1A]/52 leading-relaxed text-[0.95rem] max-w-xl text-justify"
               style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300 }}
             >
               Founded by <strong className="text-[#111110] font-semibold">{agency.founder}</strong>, Trending Marketing emerged from a passion for storytelling and a sharp eye for what makes content spread. Over 5 years, we've grown into a full-service agency trusted by Bollywood production houses, independent artists, and consumer brands alike.
@@ -151,7 +217,6 @@ export default function About() {
                     className="group bg-white rounded-2xl border border-black/7 px-5 py-3.5 flex items-center justify-between hover:border-[#E8470A]/22 hover:shadow-[0_4px_16px_rgba(232,71,10,0.06)] transition-all duration-200"
                   >
                     <div className="flex items-center gap-3">
-                      {/* Number indicator */}
                       <span
                         className="text-[#E8470A]/40 text-[11px] font-bold tabular-nums"
                         style={{ fontFamily: "'DM Mono', monospace" }}

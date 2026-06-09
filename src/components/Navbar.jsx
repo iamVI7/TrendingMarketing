@@ -45,7 +45,7 @@ export default function Navbar() {
             J
           </div>
           <span className="font-display font-semibold text-ink text-base">
-            Jogal<span className="text-accent">.</span>
+            Jogal Govind Ahir<span className="text-accent">.</span>
           </span>
         </a>
 
@@ -66,7 +66,7 @@ export default function Navbar() {
         {/* CTAs */}
         <div className="hidden lg:flex items-center gap-2">
           <a
-            href="https://wa.me/919876543210"
+            href="https://wa.me/+919664816180"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 bg-green-500 hover:bg-green-600 text-white rounded-full px-4 py-2 font-body font-medium text-xs transition-colors duration-200"
@@ -112,7 +112,7 @@ export default function Navbar() {
           </ul>
           <div className="flex gap-2 mt-3 pt-3 border-t border-border">
             <a
-              href="https://wa.me/919876543210"
+              href="https://wa.me/+919664816180"
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1 flex items-center justify-center gap-1.5 bg-green-500 text-white rounded-full py-2.5 font-body font-medium text-sm transition-colors hover:bg-green-600"

@@ -16,7 +16,7 @@ export const siteData = {
     ],
     email: 'contact@trendingmarketing.in',
     phone: '+91 98765 43210',
-    whatsapp: 'https://wa.me/919876543210',
+    whatsapp: 'https://wa.me/+919664816180',
   },
 
   skills: [

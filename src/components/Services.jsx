@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { siteData } from '../data/siteData'
 
 const row1 = siteData.services.slice(0, 6)
@@ -30,8 +30,19 @@ export default function Services() {
       <style>{`
         @keyframes marqueeLeft  { from { transform: translateX(0); }    to { transform: translateX(-50%); } }
         @keyframes marqueeRight { from { transform: translateX(-50%); } to { transform: translateX(0); }    }
-        .track-left  { display: flex; gap: 20px; animation: marqueeLeft  28s linear infinite; }
-        .track-right { display: flex; gap: 20px; animation: marqueeRight 32s linear infinite; }
+
+        .track-left {
+          display: flex;
+          gap: 20px;
+          animation: marqueeLeft 28s linear infinite;
+          will-change: transform;
+        }
+        .track-right {
+          display: flex;
+          gap: 20px;
+          animation: marqueeRight 32s linear infinite;
+          will-change: transform;
+        }
 
         @media (max-width: 639px) {
           .track-left, .track-right {
@@ -40,12 +51,27 @@ export default function Services() {
             overflow-y: hidden;
             scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
             padding-bottom: 8px;
+            cursor: grab;
+          }
+          .track-left:active, .track-right:active {
+            cursor: grabbing;
           }
           .track-left::-webkit-scrollbar,
           .track-right::-webkit-scrollbar { display: none; }
-          .track-left  { scrollbar-width: none; }
-          .track-right { scrollbar-width: none; }
+          .track-left, .track-right { scrollbar-width: none; }
+
+          .marquee-card {
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+          }
+        }
+
+        .track-left, .track-right {
+          backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
+          transform: translateZ(0);
         }
       `}</style>
 
@@ -56,14 +82,16 @@ export default function Services() {
       {/* Header */}
       <div className="max-w-7xl mx-auto px-5 sm:px-8 relative z-10 mb-14">
 
-        {/* Label pill */}
-        <div style={{
-          display: 'flex', alignItems: 'center',
-          fontFamily: "'DM Mono',monospace",
-          fontSize: 10, letterSpacing: '0.2em',
-          color: '#ff5a3c', textTransform: 'uppercase',
-          marginBottom: 20,
-        }}>
+        {/* Label pill — left on desktop, centered on mobile */}
+        <div
+          className="flex justify-center sm:justify-start"
+          style={{
+            fontFamily: "'DM Mono',monospace",
+            fontSize: 10, letterSpacing: '0.2em',
+            color: '#ff5a3c', textTransform: 'uppercase',
+            marginBottom: 20,
+          }}
+        >
           <span style={{
             display: 'inline-flex', alignItems: 'center', gap: 8,
             border: '1px solid rgba(255,90,60,0.25)',
@@ -75,9 +103,8 @@ export default function Services() {
           </span>
         </div>
 
-        {/* Two-column: headline left, body copy right */}
-        <div style={{ display: 'flex', alignItems: 'flex-end', gap: 48, flexWrap: 'wrap' }}>
-          {/* Left — headline */}
+        {/* Headline + body copy */}
+        <div className="flex flex-col items-center text-center sm:flex-row sm:items-end sm:text-left" style={{ gap: 48, flexWrap: 'wrap' }}>
           <div style={{ flex: '0 0 auto' }}>
             <h2 style={{
               fontFamily: "'Playfair Display',Georgia,serif",
@@ -93,16 +120,18 @@ export default function Services() {
             </h2>
           </div>
 
-          {/* Right — body copy, far right, bottom-aligned */}
-          <div style={{ marginLeft: 'auto', maxWidth: 340, paddingBottom: 6, textAlign: 'right' }}>
-            <p style={{
-              fontFamily: "'DM Sans',sans-serif",
-              fontSize: '1.05rem',
-              fontWeight: 300,
-              color: 'rgba(240,237,232,0.45)',
-              lineHeight: 1.65,
-              margin: 0,
-            }}>
+          <div className="mt-5 sm:mt-0 sm:ml-auto" style={{ maxWidth: 340, paddingBottom: 6 }}>
+            <p
+              className="text-center sm:text-right"
+              style={{
+                fontFamily: "'DM Sans',sans-serif",
+                fontSize: '1.05rem',
+                fontWeight: 300,
+                color: 'rgba(240,237,232,0.45)',
+                lineHeight: 1.65,
+                margin: 0,
+              }}
+            >
               From single releases to year-long campaigns — with precision.
             </p>
           </div>
@@ -135,18 +164,37 @@ export default function Services() {
 }
 
 function MarqueeCard({ item }) {
+  const [tapped, setTapped] = useState(false)
+
   return (
     <div
-      className="relative flex-shrink-0 w-64 h-40 sm:w-72 sm:h-44 rounded-2xl overflow-hidden border border-white/10 cursor-default group/card transition-all duration-500 hover:border-white/25 hover:scale-[1.03]"
-      style={{ scrollSnapAlign: 'start' }}
+      className="marquee-card relative flex-shrink-0 w-64 h-40 sm:w-72 sm:h-44 rounded-2xl overflow-hidden border border-white/10 cursor-default group/card transition-all duration-500 hover:border-white/25 hover:scale-[1.03]"
+      onTouchEnd={() => setTapped((prev) => !prev)}
     >
       <img
         src={item.image}
         alt={item.title}
-        className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover/card:opacity-75 group-hover/card:scale-105 transition-all duration-500"
+        className="absolute inset-0 w-full h-full object-cover group-hover/card:opacity-75 group-hover/card:scale-105 transition-all duration-500"
+        style={{
+          opacity: tapped ? 0.75 : undefined,
+          transform: tapped ? 'scale(1.05)' : undefined,
+        }}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300" />
-      <span className="absolute bottom-3 left-4 font-mono text-[11px] tracking-widest uppercase text-white/90 opacity-0 translate-y-2 group-hover/card:opacity-100 group-hover/card:translate-y-0 transition-all duration-300">
+
+      {/* Gradient overlay */}
+      <div
+        className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300 group-hover/card:opacity-100"
+        style={{ opacity: tapped ? 1 : undefined }}
+      />
+
+      {/* Title text */}
+      <span
+        className="absolute bottom-3 left-4 font-mono text-[11px] tracking-widest uppercase text-white/90 transition-all duration-300 group-hover/card:opacity-100 group-hover/card:translate-y-0"
+        style={{
+          opacity: tapped ? 1 : undefined,
+          transform: tapped ? 'translateY(0)' : undefined,
+        }}
+      >
         {item.title}
       </span>
     </div>

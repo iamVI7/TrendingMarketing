@@ -5,9 +5,7 @@ const navLinks = [
   { label: 'About', href: '#about' },
   { label: 'Services', href: '#services' },
   { label: 'Work', href: '#work' },
-  { label: 'Pricing', href: '#pricing' },
   { label: 'Reach', href: '#reach' },
-  { label: 'Blog', href: '#blog' },
 ]
 
 const socials = [
@@ -33,21 +31,21 @@ export default function Footer() {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 mb-12">
 
           {/* Brand block */}
-          <div className="space-y-5 max-w-sm">
+          <div className="space-y-5 max-w-sm flex flex-col items-center sm:items-start">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-accent rounded-xl flex items-center justify-center text-white font-display font-bold text-xl">
+              <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white font-display font-bold text-xl">
                 J
               </div>
               <div>
                 <div className="font-display font-semibold text-[#111110] text-lg">Jogal Govind Ahir</div>
               </div>
             </div>
-            <p className="font-body text-sm text-[#1A1A1A]/50 leading-relaxed">
+            <p className="font-body text-sm text-[#1A1A1A]/50 leading-relaxed text-center sm:text-left">
               Helping brands, films, and artists go viral through data-driven campaigns and a 300M+ follower network.
             </p>
 
             {/* Social icons */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center justify-center sm:justify-start gap-2">
               {socials.map(({ Icon, href, label }) => (
                 <a
                   key={label}
