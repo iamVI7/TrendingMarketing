@@ -27,8 +27,9 @@ export const siteData = {
   ],
 
   services: [
-    { icon: '🎬', title: 'Movie Promotion', desc: 'Full-funnel campaigns for theatrical & OTT releases that build hype before day one.', image: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&q=80' },
     { icon: '📺', title: 'Web Series & OTT', desc: 'Audience building strategies for OTT originals and digital web series.', image: 'https://deadline.com/wp-content/uploads/2024/10/Amazon-MX-Player.jpeg?w=681&h=383&crop=1' },
+    { icon: '🎬', title: 'Movie Promotion', desc: 'Full-funnel campaigns for theatrical & OTT releases that build hype before day one.', image: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&q=80' },
+    
     { icon: '🎵', title: 'Music & Song Promotion', desc: 'Cross-platform music rollouts across 50+ DSPs and social media platforms.', image: 'https://drone-mods.com/wp-content/uploads/2025/04/image_M92750UYBL.png' },
     { icon: '🌟', title: 'Influencer Marketing', desc: 'Curated influencer matchmaking that drives authentic reach and conversions.', image: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&q=80' },
     { icon: '📱', title: 'App Promotion', desc: 'Install-driven campaigns that put your app in front of the right audience.', image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&q=80' },
